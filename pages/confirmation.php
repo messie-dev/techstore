@@ -274,15 +274,15 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="../index.html" class="logo">⬡ TechStore</a>
+                <a href="../index.php" class="logo">⬡ TechStore</a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="panier.html">Panier</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
+                    <li><a href="catalogue.php">Catalogue</a></li>
+                    <li><a href="panier.php">Panier</a></li>
                 </ul>
                 <!-- Profil utilisateur -->
                 <div class="user-section" id="user-section">
-                    <a href="connexion.html" class="btn-connexion" id="btn-connexion">Connexion</a>
+                    <a href="connexion.php" class="btn-connexion" id="btn-connexion">Connexion</a>
                     <div class="user-profile-container" id="user-profile-container" style="display: none;">
                         <button class="user-profile-btn" id="user-profile-btn">
                             <img src="" alt="Profil" class="user-avatar" id="user-avatar">
@@ -290,7 +290,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="user-dropdown" id="user-dropdown">
-                            <a href="profil.html" class="dropdown-item">
+                            <a href="profil.php" class="dropdown-item">
                                 <i class="fas fa-user"></i> Mon profil
                             </a>
                             <a href="#" class="dropdown-item" id="logout-link">
@@ -337,11 +337,11 @@
 
                 <!-- CTA Buttons -->
                 <div class="cta-buttons">
-                    <a href="profil.html" class="btn btn-primary">
+                    <a href="profil.php" class="btn btn-primary">
                         <i class="fas fa-history"></i>
                         Mes Commandes
                     </a>
-                    <a href="../index.html" class="btn btn-secondary">
+                    <a href="../index.php" class="btn btn-secondary">
                         <i class="fas fa-home"></i>
                         Accueil
                     </a>
@@ -357,10 +357,10 @@
                 <div class="footer-column">
                     <h4>Navigation Rapide</h4>
                     <ul>
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="catalogue.html">Catalogue Produits</a></li>
-                        <li><a href="panier.html">Mon Panier</a></li>
-                        <li><a href="connexion.html">Espace Client</a></li>
+                        <li><a href="../index.php">Accueil</a></li>
+                        <li><a href="catalogue.php">Catalogue Produits</a></li>
+                        <li><a href="panier.php">Mon Panier</a></li>
+                        <li><a href="connexion.php">Espace Client</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

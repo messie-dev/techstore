@@ -12,8 +12,6 @@ require "bdd.php";
     <title>TechStore - Expert en matériel informatique</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="profile.php">
-    <link rel="stylesheet" href="upload.php">
 </head>
 <body>
     <!-- Header / Navigation -->
@@ -94,21 +92,21 @@ require "bdd.php";
             </div>
 
             <div class="categories-grid">
-                <div class="category-card" onclick="window.location.href='pages/catalogue.html?category=ordinateurs'">
+                <div class="category-card" onclick="window.location.href='pages/catalogue.php?category=ordinateurs'">
                     <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400&h=300&fit=crop" alt="Ordinateurs">
                     <div class="category-overlay">
                         <h3>Ordinateurs</h3>
                         <p>PC Portables et Fixes</p>
                     </div>
                 </div>
-                <div class="category-card" onclick="window.location.href='pages/catalogue.html?category=composants'">
+                <div class="category-card" onclick="window.location.href='pages/catalogue.php?category=composants'">
                     <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=400&h=300&fit=crop" alt="Composants">
                     <div class="category-overlay">
                         <h3>Composants</h3>
                         <p>Pièces détachées informatiques</p>
                     </div>
                 </div>
-                <div class="category-card" onclick="window.location.href='pages/catalogue.html?category=peripheriques'">
+                <div class="category-card" onclick="window.location.href='pages/catalogue.php?category=peripheriques'">
                     <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=300&fit=crop" alt="Périphériques">
                     <div class="category-overlay">
                         <h3>Périphériques</h3>

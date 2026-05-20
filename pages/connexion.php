@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="auth-page">
-    <!-- Header / Navigation -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -23,21 +22,18 @@
         </div>
     </header>
 
-    <!-- Auth Section -->
     <section class="auth-section">
-        <form action="../login.php" method="post" novalidate>
         <div class="container">
             <div class="auth-container">
-                <!-- Login Form -->
                 <div class="auth-form-container" id="login-form">
                     <div class="auth-header">
                         <h2>Connexion</h2>
                         <p>Connectez-vous pour accéder à votre compte</p>
                     </div>
 
-                    <form class="auth-form" onsubmit="handleLogin(event)">
+                    <form class="auth-form" action="../login.php" method="post">
                         <div class="form-group">
-                            <label for="login-email"> email</label>
+                            <label for="login-email">Email</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-envelope"></i>
                                 <input type="email" id="login-email" name="email" placeholder="votre@email.com" required>
@@ -49,98 +45,17 @@
                             <div class="input-with-icon">
                                 <i class="fas fa-lock"></i>
                                 <input type="password" id="login-password" name="mot_de_passe" placeholder="Votre mot de passe" required>
-                                <button type="button" class="toggle-password" onclick="togglePassword('login-password')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
                             </div>
                         </div>
 
-                        <div class="form-options">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="remember-me">
-                                <span>Se souvenir de moi</span>
-                            </label>
-                            <a href="#" class="forgot-password">Mot de passe oublié ?</a>
-                        </div>
-
-                        <button type="submit" class="btn-auth">Se connecter</button>
+                        <button type="submit" name="connexion" class="btn-auth">Se connecter</button>
                     </form>
 
                     <div class="auth-footer">
-                        <p>Pas encore de compte ? <a href="#" onclick="showRegister()">Créer un compte</a></p>
+                        <p>Pas encore de compte ? <a href="inscription.php">Créer un compte</a></p>
                     </div>
                 </div>
 
-                <!-- Register Form -->
-                <div class="auth-form-container hidden" id="register-form">
-                     <form action="../register.php" method="post">
-                    <div class="auth-header">
-                        <h2>Créer un compte</h2>
-                        <p>Inscrivez-vous pour profiter de tous nos avantages</p>
-                    </div>
-
-                    <form class="auth-form" onsubmit="handleRegister(event)">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="register-firstname">Prénom</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" id="register-firstname"  name="prenom" placeholder="Votre prénom" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="register-lastname">Nom</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-user"></i>
-                                    <input type="text" id="register-lastname" name="nom"  placeholder="Votre nom" required>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="register-email"> email</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-envelope"></i>
-                                <input type="email" id="register-email" name="email" placeholder="votre@email.com" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="register-phone">telephone</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-phone"></i>
-                                <input type="tel" id="register-phone" name="telephone" placeholder="+33 6 12 34 56 78">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="register-password">Mot de passe</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" id="register-password" name="mot_de_passe" placeholder="Créez un mot de passe" required>
-                                <button type="button" class="toggle-password" onclick="togglePassword('register-password')">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="register-password-confirm">Confirmer le mot de passe</label>
-                            <div class="input-with-icon">
-                                <i class="fas fa-lock"></i>
-                                <input type="password" id="register-password-confirm" placeholder="Confirmez votre mot de passe" required>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="btn-auth">Créer mon compte</button>
-                    </form>
-
-                    <div class="auth-footer">
-                        <p>Déjà un compte ? <a href="#" onclick="showLogin()">Se connecter</a></p>
-                    </div>
-                </div>
-
-                <!-- Auth Benefits -->
                 <div class="auth-benefits">
                     <h3>Avantages de votre compte</h3>
                     <ul>
@@ -178,7 +93,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -188,7 +102,7 @@
                         <li><a href="../index.php">Accueil</a></li>
                         <li><a href="catalogue.php">Catalogue Produits</a></li>
                         <li><a href="panier.php">Mon Panier</a></li>
-                        <li><a href="#">Espace Client</a></li>
+                        <li><a href="connexion.php">Espace Client</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -231,6 +145,5 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script src="../js/connexion.js"></script>
 </body>
 </html>

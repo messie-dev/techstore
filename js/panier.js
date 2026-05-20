@@ -256,7 +256,7 @@ function loadRecommendedProducts() {
 }
 
 function goToProduct(productId) {
-    window.location.href = `produit.html?id=${productId}`;
+    window.location.href = `produit.php?id=${productId}`;
 }
 
 // ============================================

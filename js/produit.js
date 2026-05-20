@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         loadProductDetail(productId);
     } else {
         // Rediriger vers le catalogue si pas d'ID
-        window.location.href = 'catalogue.html';
+        window.location.href = 'catalogue.php';
     }
 });
 
@@ -30,7 +30,7 @@ function loadProductDetail(productId) {
     currentProduct = products.find(p => p.id === productId);
 
     if (!currentProduct) {
-        window.location.href = 'catalogue.html';
+        window.location.href = 'catalogue.php';
         return;
     }
 
@@ -224,7 +224,7 @@ function addToCartFromDetail() {
 
 function buyNow() {
     addToCartFromDetail();
-    window.location.href = 'panier.html';
+    window.location.href = 'panier.php';
 }
 
 // ============================================

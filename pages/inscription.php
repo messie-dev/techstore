@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion - TechStore</title>
+    <title>Inscription - TechStore</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="auth-page">
-    <!-- Header / Navigation -->
     <header class="header">
         <div class="container">
             <nav class="navbar">
@@ -18,32 +17,115 @@
                     <li><a href="catalogue.php">Catalogue</a></li>
                     <li><a href="panier.php">Panier</a></li>
                 </ul>
-                <button class="btn-connexion active">Connexion</button>
+                <button class="btn-connexion active">Inscription</button>
             </nav>
         </div>
     </header>
 
-    <form action="inscription.php" method="POST">
+    <section class="auth-section">
+        <div class="container">
+            <div class="auth-container">
+                <div class="auth-form-container" id="register-form">
+                    <div class="auth-header">
+                        <h2>Créer un compte</h2>
+                        <p>Inscrivez-vous pour profiter de tous nos avantages</p>
+                    </div>
 
-    <input type="text" name="nom" placeholder="Nom" required>
+                    <form class="auth-form" action="../register.php" method="post">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-firstname">Prénom</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-firstname" name="prenom" placeholder="Votre prénom" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-lastname">Nom</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-lastname" name="nom" placeholder="Votre nom" required>
+                                </div>
+                            </div>
+                        </div>
 
-    <input type="text" name="prenom" placeholder="Prénom" required>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="register-email" name="email" placeholder="votre@email.com" required>
+                            </div>
+                        </div>
 
-    <input type="email" name="email" placeholder="Email" required>
+                        <div class="form-group">
+                            <label for="register-phone">Téléphone</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="register-phone" name="telephone" placeholder="+33 6 12 34 56 78">
+                            </div>
+                        </div>
 
-    <input type="text" name="telephone" placeholder="Téléphone" required>
+                        <div class="form-group">
+                            <label for="register-address">Adresse</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="register-address" name="adresse" placeholder="Votre adresse">
+                            </div>
+                        </div>
 
-    <textarea name="adresse" placeholder="Adresse"></textarea>
+                        <div class="form-group">
+                            <label for="register-password">Mot de passe</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="register-password" name="mot_de_passe" placeholder="Créez un mot de passe" required>
+                            </div>
+                        </div>
 
-    <input type="password" name="mot_de_passe" placeholder="Mot de passe" required>
+                        <button type="submit" name="inscription" class="btn-auth">Créer mon compte</button>
+                    </form>
 
-    <button type="submit" name="inscription">
-        S’inscrire
-    </button>
+                    <div class="auth-footer">
+                        <p>Déjà un compte ? <a href="connexion.php">Se connecter</a></p>
+                    </div>
+                </div>
 
-</form>
+                <div class="auth-benefits">
+                    <h3>Avantages de votre compte</h3>
+                    <ul>
+                        <li>
+                            <i class="fas fa-shopping-bag"></i>
+                            <div>
+                                <strong>Suivi de commandes</strong>
+                                <p>Suivez vos commandes en temps réel</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-heart"></i>
+                            <div>
+                                <strong>Liste de souhaits</strong>
+                                <p>Enregistrez vos produits favoris</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <strong>Alertes prix</strong>
+                                <p>Soyez informé des promotions</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-history"></i>
+                            <div>
+                                <strong>Historique d'achats</strong>
+                                <p>Consultez vos achats précédents</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -53,7 +135,7 @@
                         <li><a href="../index.php">Accueil</a></li>
                         <li><a href="catalogue.php">Catalogue Produits</a></li>
                         <li><a href="panier.php">Mon Panier</a></li>
-                        <li><a href="#">Espace Client</a></li>
+                        <li><a href="connexion.php">Espace Client</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -96,6 +178,5 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script src="../js/connexion.js"></script>
 </body>
 </html>

@@ -294,15 +294,15 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="../index.html" class="logo">⬡ TechStore</a>
+                <a href="../index.php" class="logo">⬡ TechStore</a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="panier.html">Panier</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
+                    <li><a href="catalogue.php">Catalogue</a></li>
+                    <li><a href="panier.php">Panier</a></li>
                 </ul>
                 <!-- Profil utilisateur -->
                 <div class="user-section" id="user-section">
-                    <a href="connexion.html" class="btn-connexion" id="btn-connexion">Connexion</a>
+                    <a href="connexion.php" class="btn-connexion" id="btn-connexion">Connexion</a>
                     <div class="user-profile-container" id="user-profile-container" style="display: none;">
                         <button class="user-profile-btn" id="user-profile-btn">
                             <img src="" alt="Profil" class="user-avatar" id="user-avatar">
@@ -310,7 +310,7 @@
                             <i class="fas fa-chevron-down"></i>
                         </button>
                         <div class="user-dropdown" id="user-dropdown">
-                            <a href="profil.html" class="dropdown-item">
+                            <a href="profil.php" class="dropdown-item">
                                 <i class="fas fa-user"></i> Mon profil
                             </a>
                             <a href="#" class="dropdown-item" id="logout-link">
@@ -327,9 +327,9 @@
     <section class="page-header">
         <div class="container">
             <nav class="breadcrumb-nav">
-                <a href="../index.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="../index.php"><i class="fas fa-home"></i> Accueil</a>
                 <span class="separator">></span>
-                <a href="panier.html">Panier</a>
+                <a href="panier.php">Panier</a>
                 <span class="separator">></span>
                 <span>Validation de Commande</span>
             </nav>
@@ -521,7 +521,7 @@
                         Confirmer la Commande
                     </button>
 
-                    <a href="panier.html" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; color: #3b82f6; text-decoration: none; font-weight: 500;">
+                    <a href="panier.php" style="display: flex; align-items: center; justify-content: center; margin-top: 1rem; color: #3b82f6; text-decoration: none; font-weight: 500;">
                         <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>
                         Retour au panier
                     </a>
@@ -537,10 +537,10 @@
                 <div class="footer-column">
                     <h4>Navigation Rapide</h4>
                     <ul>
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="catalogue.html">Catalogue Produits</a></li>
-                        <li><a href="panier.html">Mon Panier</a></li>
-                        <li><a href="connexion.html">Espace Client</a></li>
+                        <li><a href="../index.php">Accueil</a></li>
+                        <li><a href="catalogue.php">Catalogue Produits</a></li>
+                        <li><a href="panier.php">Mon Panier</a></li>
+                        <li><a href="connexion.php">Espace Client</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

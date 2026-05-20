@@ -27,7 +27,7 @@
     <section class="page-header">
         <div class="container">
             <nav class="breadcrumb-nav" style="justify-content: center; margin-bottom: 15px; color: rgba(255,255,255,0.8);">
-                <a href="../index.html"><i class="fas fa-home"></i></a>
+                <a href="../index.php"><i class="fas fa-home"></i></a>
                 <span class="separator">></span>
                 <span>Panier</span>
             </nav>

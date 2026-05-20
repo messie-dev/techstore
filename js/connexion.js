@@ -68,51 +68,7 @@ function handleLogin(event) {
 
     // Rediriger vers l'accueil après 1 seconde
     setTimeout(() => {
-        window.location.href = '../index.html';
-    }, 1000);
-}
-
-// ============================================
-// REGISTER
-// ============================================
-
-function handleRegister(event) {
-    event.preventDefault();
-
-    const firstName = document.getElementById('register-firstname').value;
-    const lastName = document.getElementById('register-lastname').value;
-    const email = document.getElementById('register-email').value;
-    const phone = document.getElementById('register-phone').value;
-    const password = document.getElementById('register-password').value;
-    const passwordConfirm = document.getElementById('register-password-confirm').value;
-
-    // Vérifier que les mots de passe correspondent
-    if (password !== passwordConfirm) {
-        showNotification('Les mots de passe ne correspondent pas', 'error');
-        return;
-    }
-
-    // Vérifier la force du mot de passe
-    if (password.length < 6) {
-        showNotification('Le mot de passe doit contenir au moins 6 caractères', 'error');
-        return;
-    }
-
-    // Simulation d'inscription
-    const user = {
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-        phone: phone,
-        isLoggedIn: true
-    };
-
-    localStorage.setItem('techstore_user', JSON.stringify(user));
-
-    showNotification('Compte créé avec succès ! Redirection...');
-
-    setTimeout(() => {
-        window.location.href = '../index.html';
+        window.location.href = '../index.php';
     }, 1000);
 }
 
@@ -169,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (btnConnexion) {
             btnConnexion.textContent = user.firstName || user.name || 'Mon Compte';
             btnConnexion.onclick = () => {
-                window.location.href = 'compte.html';
+                window.location.href = 'profil.php';
             };
         }
     }

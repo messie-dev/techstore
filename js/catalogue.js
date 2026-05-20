@@ -218,7 +218,7 @@ function setView(view) {
 // ============================================
 
 function goToProduct(productId) {
-    window.location.href = `produit.html?id=${productId}`;
+    window.location.href = `produit.php?id=${productId}`;
 }
 
 // ============================================
@@ -237,7 +237,7 @@ function showToast() {
             <div class="toast-content">
                 <span class="toast-title">Produit ajouté au panier avec succès</span>
             </div>
-            <a href="panier.html" class="toast-action">Voir le panier</a>
+            <a href="panier.php" class="toast-action">Voir le panier</a>
         `;
         document.body.appendChild(toast);
     }

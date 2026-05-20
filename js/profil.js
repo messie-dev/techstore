@@ -116,8 +116,8 @@ function handleLogout() {
         // Rediriger vers l'accueil après 1 seconde
         setTimeout(() => {
             window.location.href = window.location.pathname.includes('pages/') 
-                ? '../index.html' 
-                : 'index.html';
+                ? '../index.php' 
+                : 'index.php';
         }, 1000);
     }
 }
@@ -129,8 +129,8 @@ function handleLogout() {
 function goToProfile() {
     // Rediriger vers la page profil (vous pouvez créer une page dédiée)
     const pagePath = window.location.pathname.includes('pages/') 
-        ? './profil.html' 
-        : './pages/profil.html';
+        ? './profil.php' 
+        : './pages/profil.php';
     window.location.href = pagePath;
 }
 

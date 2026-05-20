@@ -267,7 +267,7 @@ function createHomeProductCard(product) {
 }
 
 function goToProduct(productId) {
-    window.location.href = `pages/produit.html?id=${productId}`;
+    window.location.href = `pages/produit.php?id=${productId}`;
 }
 
 // ============================================
@@ -326,7 +326,7 @@ function showToast() {
             <div class="toast-content">
                 <span class="toast-title">Produit ajouté au panier avec succès</span>
             </div>
-            <a href="pages/panier.html" class="toast-action">Voir le panier</a>
+            <a href="pages/panier.php" class="toast-action">Voir le panier</a>
         `;
         document.body.appendChild(toast);
     }
@@ -348,7 +348,7 @@ function updateUserButton() {
 
     if (user && user.isLoggedIn && btnConnexion) {
         btnConnexion.textContent = user.firstName || user.name || 'Mon Compte';
-        btnConnexion.href = 'pages/compte.html';
+        btnConnexion.href = 'pages/profil.php';
     }
 }
 
@@ -390,7 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
         searchBtn.addEventListener('click', function() {
             const query = searchInput.value.trim();
             if (query) {
-                window.location.href = `pages/catalogue.html?search=${encodeURIComponent(query)}`;
+                window.location.href = `pages/catalogue.php?search=${encodeURIComponent(query)}`;
             }
         });
 
@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
     tags.forEach(tag => {
         tag.addEventListener('click', function() {
             const query = this.textContent;
-            window.location.href = `pages/catalogue.html?search=${encodeURIComponent(query)}`;
+            window.location.href = `pages/catalogue.php?search=${encodeURIComponent(query)}`;
         });
     });
 });

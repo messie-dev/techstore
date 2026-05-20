@@ -3,7 +3,7 @@
 // Démarrage de la session
 session_start();
 
-// Inclusion du fichier de connexion
+// Inclusion de la connexion à la base de données
 require_once 'bdd.php';
 
 // Vérifie si le formulaire est soumis
@@ -48,7 +48,7 @@ if(isset($_POST['inscription'])) {
             $adresse
         ]);
 
-       header('Location:connexion.php');
+       header('Location: pages/connexion.php');
        exit();
     }
 }

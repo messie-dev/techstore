@@ -12,9 +12,9 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="../index.html" class="logo">⬡ TechStore</a>
+                <a href="../index.php" class="logo">⬡ TechStore</a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
                     <li><a href="catalogue.php" class="active">Catalogue</a></li>
                     <li><a href="panier.php">Panier</a></li>
                 </ul>

@@ -437,7 +437,7 @@ session_start();
 if(!isset($_SESSION['id'])) {
 
     // Redirection vers la page de connexion
-    header('Location: ../admin/login.php');
+    header('Location: pages/connexion.php');
     exit();
 }
 
@@ -496,7 +496,7 @@ if($_SESSION['role'] != 'admin') {
           <i class="fa-solid fa-gear"></i>
           Paramètres
         </li>
-        <li> <a href="../public/index.php">Retour au site</a> </li>
+        <li> <a href="index.php">Retour au site</a> </li>
 
       </ul>
     

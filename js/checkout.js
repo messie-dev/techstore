@@ -371,7 +371,7 @@ function createOrder() {
 
     // Rediriger vers la page de confirmation
     setTimeout(() => {
-        window.location.href = 'confirmation.html?orderId=' + order.id;
+        window.location.href = 'confirmation.php?orderId=' + order.id;
     }, 1500);
 }
 

@@ -12,11 +12,11 @@
     <header class="header">
         <div class="container">
             <nav class="navbar">
-                <a href="../index.html" class="logo">⬡ TechStore</a>
+                <a href="../index.php" class="logo">⬡ TechStore</a>
                 <ul class="nav-links">
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="panier.html">Panier</a></li>
+                    <li><a href="../index.php">Accueil</a></li>
+                    <li><a href="catalogue.php">Catalogue</a></li>
+                    <li><a href="panier.php">Panier</a></li>
                 </ul>
                 <button class="btn-connexion">Connexion</button>
             </nav>
@@ -27,9 +27,9 @@
     <div class="breadcrumb">
         <div class="container">
             <nav class="breadcrumb-nav">
-                <a href="../index.html"><i class="fas fa-home"></i> Accueil</a>
+                <a href="../index.php"><i class="fas fa-home"></i> Accueil</a>
                 <span class="separator">></span>
-                <a href="catalogue.html">Produits</a>
+                <a href="catalogue.php">Produits</a>
                 <span class="separator">></span>
                 <span id="breadcrumb-product-name">Produit</span>
             </nav>
@@ -194,9 +194,9 @@
                 <div class="footer-column">
                     <h4>Navigation Rapide</h4>
                     <ul>
-                        <li><a href="../index.html">Accueil</a></li>
-                        <li><a href="catalogue.html">Catalogue Produits</a></li>
-                        <li><a href="panier.html">Mon Panier</a></li>
+                        <li><a href="../index.php">Accueil</a></li>
+                        <li><a href="catalogue.php">Catalogue Produits</a></li>
+                        <li><a href="panier.php">Mon Panier</a></li>
                         <li><a href="#">Espace Client</a></li>
                     </ul>
                 </div>
@@ -245,7 +245,7 @@
         <div class="toast-content">
             <span class="toast-title">Produit ajouté au panier avec succès</span>
         </div>
-        <a href="panier.html" class="toast-action">Voir le panier</a>
+        <a href="panier.php" class="toast-action">Voir le panier</a>
     </div>
 
     <script src="../js/main.js"></script>

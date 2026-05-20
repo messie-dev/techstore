@@ -25,7 +25,7 @@
 
     <!-- Auth Section -->
     <section class="auth-section">
-        <form action="../admin/register.php" method="post" novalidate>
+        <form action="../login.php" method="post" novalidate>
         <div class="container">
             <div class="auth-container">
                 <!-- Login Form -->
@@ -37,10 +37,10 @@
 
                     <form class="auth-form" onsubmit="handleLogin(event)">
                         <div class="form-group">
-                            <label for="login-email">Adresse email</label>
+                            <label for="login-email"> email</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-envelope"></i>
-                                <input type="email" id="login-email" placeholder="votre@email.com" required>
+                                <input type="email" id="login-email" name="email" placeholder="votre@email.com" required>
                             </div>
                         </div>
 
@@ -48,7 +48,7 @@
                             <label for="login-password">Mot de passe</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" id="login-password" placeholder="Votre mot de passe" required>
+                                <input type="password" id="login-password" name="mot_de_passe" placeholder="Votre mot de passe" required>
                                 <button type="button" class="toggle-password" onclick="togglePassword('login-password')">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -66,19 +66,6 @@
                         <button type="submit" class="btn-auth">Se connecter</button>
                     </form>
 
-                    <div class="auth-divider">
-                        <span>ou</span>
-                    </div>
-
-                    <div class="social-auth">
-                        <button class="btn-social btn-google">
-                            <i class="fab fa-google"></i> Continuer avec Google
-                        </button>
-                        <button class="btn-social btn-facebook">
-                            <i class="fab fa-facebook-f"></i> Continuer avec Facebook
-                        </button>
-                    </div>
-
                     <div class="auth-footer">
                         <p>Pas encore de compte ? <a href="#" onclick="showRegister()">Créer un compte</a></p>
                     </div>
@@ -86,19 +73,35 @@
 
                 <!-- Register Form -->
                 <div class="auth-form-container hidden" id="register-form">
-                     <form action="../admin/login.php" method="post">
+                     <form action="../register.php" method="post">
                     <div class="auth-header">
                         <h2>Créer un compte</h2>
                         <p>Inscrivez-vous pour profiter de tous nos avantages</p>
                     </div>
 
                     <form class="auth-form" onsubmit="handleRegister(event)">
-                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="register-firstname">Prénom</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-firstname"  name="prenom" placeholder="Votre prénom" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="register-lastname">Nom</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="register-lastname" name="nom"  placeholder="Votre nom" required>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label for="register-email"> email</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-envelope"></i>
-                                <input type="email" id="register-email" placeholder="votre@email.com" required>
+                                <input type="email" id="register-email" name="email" placeholder="votre@email.com" required>
                             </div>
                         </div>
 
@@ -106,7 +109,7 @@
                             <label for="register-phone">telephone</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-phone"></i>
-                                <input type="tel" id="register-phone" placeholder="+33 6 12 34 56 78">
+                                <input type="tel" id="register-phone" name="telephone" placeholder="+33 6 12 34 56 78">
                             </div>
                         </div>
 
@@ -114,7 +117,7 @@
                             <label for="register-password">Mot de passe</label>
                             <div class="input-with-icon">
                                 <i class="fas fa-lock"></i>
-                                <input type="password" id="register-password" placeholder="Créez un mot de passe" required>
+                                <input type="password" id="register-password" name="mot_de_passe" placeholder="Créez un mot de passe" required>
                                 <button type="button" class="toggle-password" onclick="togglePassword('register-password')">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -128,11 +131,6 @@
                                 <input type="password" id="register-password-confirm" placeholder="Confirmez votre mot de passe" required>
                             </div>
                         </div>
-
-                        <label class="checkbox-label terms">
-                            <input type="checkbox" id="accept-terms" required>
-                            <span>J'accepte les <a href="#">Conditions Générales d'Utilisation</a> et la <a href="#">Politique de Confidentialité</a></span>
-                        </label>
 
                         <button type="submit" class="btn-auth">Créer mon compte</button>
                     </form>

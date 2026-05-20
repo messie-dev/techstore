@@ -428,7 +428,28 @@
 
 </head>
 <body>
+<?php
 
+// Démarrage de la session
+session_start();
+
+// Vérifie si l’utilisateur est connecté
+if(!isset($_SESSION['id'])) {
+
+    // Redirection vers la page de connexion
+    header('Location: ../admin/login.php');
+    exit();
+}
+
+// Vérifie si l’utilisateur est admin
+if($_SESSION['role'] != 'admin') {
+
+    // Refuse l’accès
+    echo "Accès refusé";
+    exit();
+}
+
+?>
   <!-- SIDEBAR -->
 
   <div class="sidebar">

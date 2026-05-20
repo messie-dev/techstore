@@ -1,6 +1,8 @@
 <?php
-require "../admin/bdd.php";
+require "bdd.php";
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">

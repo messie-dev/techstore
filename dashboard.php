@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    header('Location: pages/connexion.php');
+    exit();
+}
+
+if ($_SESSION['role'] != 'admin') {
+    echo "Accès refusé";
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -428,28 +441,6 @@
 
 </head>
 <body>
-<?php
-
-// Démarrage de la session
-session_start();
-
-// Vérifie si l’utilisateur est connecté
-if(!isset($_SESSION['id'])) {
-
-    // Redirection vers la page de connexion
-    header('Location: pages/connexion.php');
-    exit();
-}
-
-// Vérifie si l’utilisateur est admin
-if($_SESSION['role'] != 'admin') {
-
-    // Refuse l’accès
-    echo "Accès refusé";
-    exit();
-}
-
-?>
   <!-- SIDEBAR -->
 
   <div class="sidebar">

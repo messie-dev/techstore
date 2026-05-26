@@ -277,6 +277,14 @@ function generateStars(rating) {
 }
 
 function formatPrice(price) {
+    if (price > 10000) {
+        return new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'XOF',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    }
     return new Intl.NumberFormat('fr-FR', {
         style: 'currency',
         currency: 'EUR'

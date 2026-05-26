@@ -1,3 +1,33 @@
+<?php
+require_once __DIR__ . '/../bdd.php';
+
+$stmt = $pdo->query("SELECT p.*, c.nom as categorie_nom FROM produits p LEFT JOIN categories c ON p.categorie_id = c.id WHERE p.stock > 0 ORDER BY p.date_creation DESC");
+$dbProduits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$jsProduits = array_map(function ($p) {
+    $image = $p['image'] ?? '';
+    if ($image && strpos($image, 'http') !== 0) {
+        $image = '../' . $image;
+    }
+    if (!$image) {
+        $image = 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=300&fit=crop';
+    }
+    return [
+        'id' => (int)$p['id'],
+        'name' => $p['nom'],
+        'category' => strtolower($p['categorie_nom'] ?? ''),
+        'brand' => strtolower($p['marque'] ?? ''),
+        'price' => (float)$p['prix'],
+        'oldPrice' => null,
+        'discount' => 0,
+        'image' => $image,
+        'rating' => 4.5,
+        'reviews' => 0,
+        'stock' => (int)$p['stock'] > 0,
+        'description' => $p['description'] ?? '',
+    ];
+}, $dbProduits);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -79,12 +109,12 @@
 
                     <!-- Price Filter -->
                     <div class="filter-section">
-                        <h4>Prix</h4>
+                        <h4>Prix (FCFA)</h4>
                         <div class="price-slider">
-                            <input type="range" id="price-range" min="0" max="5000" value="5000" onchange="filterProducts()">
+                            <input type="range" id="price-range" min="0" max="2000000" value="2000000" onchange="filterProducts()">
                             <div class="price-values">
-                                <span>0€</span>
-                                <span id="price-max">5000€+</span>
+                                <span>0 F</span>
+                                <span id="price-max">2 000 000 F+</span>
                             </div>
                         </div>
                     </div>
@@ -222,6 +252,9 @@
         </div>
     </footer>
 
+    <script>
+        const productsFromDB = <?= json_encode($jsProduits) ?>;
+    </script>
     <script src="../js/main.js"></script>
     <script src="../js/catalogue.js"></script>
 </body>

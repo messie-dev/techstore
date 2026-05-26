@@ -47,11 +47,15 @@ function loadCartItems() {
 
 function createCartItemHTML(item) {
     const itemTotal = item.price * item.quantity;
+    let imgSrc = item.image;
+    if (imgSrc && !imgSrc.startsWith('http') && !imgSrc.startsWith('../') && !imgSrc.startsWith('https://')) {
+        imgSrc = '../' + imgSrc;
+    }
 
     return `
         <div class="cart-item" data-id="${item.id}">
             <div class="cart-item-image">
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${imgSrc}" alt="${item.name}">
             </div>
             <div class="cart-item-info">
                 <h4>${item.name}</h4>
@@ -264,6 +268,14 @@ function goToProduct(productId) {
 // ============================================
 
 function formatPrice(price) {
+    if (price > 10000) {
+        return new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'XOF',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    }
     return new Intl.NumberFormat('fr-FR', {
         style: 'currency',
         currency: 'EUR'

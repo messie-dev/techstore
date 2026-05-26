@@ -10,6 +10,13 @@ if ($_SESSION['role'] != 'admin') {
     echo "Accès refusé";
     exit();
 }
+
+require_once 'bdd.php';
+
+$countProduits = $pdo->query("SELECT COUNT(*) FROM produits")->fetchColumn();
+$countClients = $pdo->query("SELECT COUNT(*) FROM utilisateurs WHERE role = 'client'")->fetchColumn();
+$countCommandes = $pdo->query("SELECT COUNT(*) FROM commandes")->fetchColumn();
+$countCategories = $pdo->query("SELECT COUNT(*) FROM categories")->fetchColumn();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -459,8 +466,10 @@ if ($_SESSION['role'] != 'admin') {
         </li>
 
         <li>
-          <i class="fa-solid fa-box"></i>
-          Produits
+          <a href="pages/admin/produits.php" style="color:white;text-decoration:none;width:100%;display:flex;align-items:center;gap:15px;">
+            <i class="fa-solid fa-box"></i>
+            Produits
+          </a>
         </li>
 
         <li>
@@ -557,12 +566,12 @@ if ($_SESSION['role'] != 'admin') {
 
         <div class="top">
           <div>
-            <h3>Ventes</h3>
-            <h2>25M</h2>
+            <h3>Produits</h3>
+            <h2><?= $countProduits ?></h2>
           </div>
 
           <div class="icon-box blue">
-            <i class="fa-solid fa-dollar-sign"></i>
+            <i class="fa-solid fa-box"></i>
           </div>
         </div>
 
@@ -573,7 +582,7 @@ if ($_SESSION['role'] != 'admin') {
         <div class="top">
           <div>
             <h3>Clients</h3>
-            <h2>892</h2>
+            <h2><?= $countClients ?></h2>
           </div>
 
           <div class="icon-box green">
@@ -587,12 +596,12 @@ if ($_SESSION['role'] != 'admin') {
 
         <div class="top">
           <div>
-            <h3>Produits</h3>
-            <h2>320</h2>
+            <h3>Catégories</h3>
+            <h2><?= $countCategories ?></h2>
           </div>
 
           <div class="icon-box orange">
-            <i class="fa-solid fa-box"></i>
+            <i class="fa-solid fa-tags"></i>
           </div>
         </div>
 
@@ -603,7 +612,7 @@ if ($_SESSION['role'] != 'admin') {
         <div class="top">
           <div>
             <h3>Commandes</h3>
-            <h2>1 245</h2>
+            <h2><?= $countCommandes ?></h2>
           </div>
 
           <div class="icon-box purple">

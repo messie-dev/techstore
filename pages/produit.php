@@ -1,3 +1,34 @@
+<?php
+require_once __DIR__ . '/../bdd.php';
+
+$stmt = $pdo->query("SELECT p.*, c.nom as categorie_nom FROM produits p LEFT JOIN categories c ON p.categorie_id = c.id ORDER BY p.date_creation DESC");
+$dbProduits = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$jsProduits = array_map(function ($p) {
+    $image = $p['image'] ?? '';
+    if ($image && strpos($image, 'http') !== 0) {
+        $image = '../' . $image;
+    }
+    if (!$image) {
+        $image = 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=300&fit=crop';
+    }
+    return [
+        'id' => (int)$p['id'],
+        'name' => $p['nom'],
+        'category' => strtolower($p['categorie_nom'] ?? ''),
+        'brand' => strtolower($p['marque'] ?? ''),
+        'price' => (float)$p['prix'],
+        'oldPrice' => null,
+        'discount' => 0,
+        'image' => $image,
+        'sku' => 'PROD-' . str_pad($p['id'], 4, '0', STR_PAD_LEFT),
+        'rating' => 4.5,
+        'reviews' => 0,
+        'stock' => (int)$p['stock'] > 0,
+        'description' => $p['description'] ?? '',
+    ];
+}, $dbProduits);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -248,6 +279,9 @@
         <a href="panier.php" class="toast-action">Voir le panier</a>
     </div>
 
+    <script>
+        const productsFromDB = <?= json_encode($jsProduits) ?>;
+    </script>
     <script src="../js/main.js"></script>
     <script src="../js/produit.js"></script>
 </body>

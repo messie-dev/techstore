@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Mettre à jour le prix max
     document.getElementById('price-range').addEventListener('input', function() {
-        document.getElementById('price-max').textContent = this.value + '€';
+        const val = parseInt(this.value);
+        document.getElementById('price-max').textContent = val >= 2000000 ? '2 000 000 F+' : val.toLocaleString('fr-FR') + ' F';
     });
 });
 
@@ -106,6 +107,14 @@ function generateStars(rating) {
 }
 
 function formatPrice(price) {
+    if (price > 10000) {
+        return new Intl.NumberFormat('fr-FR', {
+            style: 'currency',
+            currency: 'XOF',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+        }).format(price);
+    }
     return new Intl.NumberFormat('fr-FR', {
         style: 'currency',
         currency: 'EUR'
@@ -123,7 +132,7 @@ function filterProducts() {
 function applyFilters() {
     // Récupérer les valeurs des filtres
     const searchQuery = document.getElementById('sidebar-search')?.value.toLowerCase() || '';
-    const maxPrice = parseInt(document.getElementById('price-range')?.value || 5000);
+    const maxPrice = parseInt(document.getElementById('price-range')?.value || 2000000);
     const inStockOnly = document.getElementById('in-stock-only')?.checked || false;
 
     // Récupérer les catégories sélectionnées
